@@ -8,5 +8,5 @@ app.config.update(
 )
 
 if __name__ == "__main__":
-    app.secret_key = "JDFKDJKFJDKFJDKJFKDJFKDJFKDJFK"
+    app.secret_key = os.environ.get('SECRET_KEY')
     app.run()

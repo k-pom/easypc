@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 client = MongoClient(
     os.environ.get('MONGODB_HOST'),
-    int(os.environ.get('MONGODB_PORT'))
+    int(os.environ.get('MONGODB_PORT', 27017))
 )
 
 database = os.environ.get('MONGODB_DATABASE')
