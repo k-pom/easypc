@@ -1,0 +1,14 @@
+mongodb:
+    host: localhost
+    port: 27017
+    user:
+    pass:
+    database: easy-pc
+
+oauth:
+    twitter:
+        key: lty...uTp
+        secret: 5MA..gcD
+
+app:
+    secret_key: "secret"
