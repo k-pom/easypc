@@ -1,6 +1,9 @@
 mongodb:
     host: localhost
     port: 27017
+    user:
+    pass:
+    database: easy-pc
 
 oauth:
     twitter:
