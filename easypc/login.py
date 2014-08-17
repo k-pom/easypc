@@ -1,3 +1,4 @@
+import os
 from flask import redirect, url_for, session, render_template
 from flask_oauth import OAuth
 from easypc import app
@@ -11,8 +12,8 @@ twitter = oauth.remote_app(
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authenticate',
-    consumer_key=config['oauth']['twitter']['key'],
-    consumer_secret=config['oauth']['twitter']['secret']
+    consumer_key=(os.environ.get('TWITTER_KEY', config['oauth']['twitter']['key'])),
+    consumer_secret=(os.environ.get('TWITTER_SECRET', config['oauth']['twitter']['secret']))
 )
 
 
