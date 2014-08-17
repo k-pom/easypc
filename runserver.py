@@ -1,3 +1,4 @@
+import os
 from easypc import app
 from easypc.config import config
 
@@ -8,5 +9,5 @@ app.config.update(
 )
 
 if __name__ == "__main__":
-    app.secret_key = config['app']['secret_key']
+    app.secret_key = os.environ.get('SECRET_KEY', config['app']['secret_key'])
     app.run()
