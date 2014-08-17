@@ -4,7 +4,7 @@ from easypc.config import config
 
 client = MongoClient(
     os.environ.get('MONGODB_HOST', config['mongodb']['host']),
-    os.environ.get('MONGODB_PORT', config['mongodb']['port'])
+    int(os.environ.get('MONGODB_PORT', config['mongodb']['port']))
 )
 
 database = os.environ.get('MONGODB_DATABASE', config['mongodb']['database'])
