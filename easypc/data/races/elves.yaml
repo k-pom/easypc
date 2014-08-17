@@ -1,0 +1,62 @@
+includes:
+    "traits": "races/traits.yaml"
+    "languages": "languages.yaml"
+
+data:
+    name: Elf
+
+    modifier_desc: "+2 Dexterity, +2 Intelligence, –2 Constitution: Elves are nimble, both in body and mind, but their form is frail."
+    desc: "The long-lived elves are children of the natural world, similar in many superficial ways to fey creatures, yet different as well. Elves value their privacy and traditions, and while they are often slow to make friends, at both the personal and national levels, once an outsider is accepted as a comrade, such alliances can last for generations. Elves have a curious attachment to their surroundings, perhaps as a result of their incredibly long lifespans or some deeper, more mystical reason. Elves who dwell in a region for long find themselves physically adapting to match their surroundings, most noticeably taking on coloration reflecting the local environment. Those elves that spend their lives among the short-lived races, on the other hand, often develop a skewed perception of mortality and become morose, the result of watching wave after wave of companions age and die before their eyes."
+    society: "Many elves feel a bond with nature and strive to live in harmony with the natural world. Most, however, find manipulating earth and stone to be distasteful, and prefer instead to indulge in the finer arts, with their inborn patience making them particularly suited to wizardry."
+    relations: "Elves are prone to dismissing other races, writing them off as rash and impulsive, yet they are excellent judges of character. An elf might not want a dwarf neighbor, but would be the first to acknowledge that dwarf's skill at smithing. They regard gnomes as strange (and sometimes dangerous) curiosities, and halflings with a measure of pity, for these small folk seem to the elves to be adrift, without a traditional home. Elves are fascinated with humans, as evidenced by the number of half-elves in the world, even if they usually disown such offspring. They regard half-orcs with distrust and suspicion."
+    alignment: "Elves are emotional and capricious, yet value kindness and beauty. Most elves are chaotic good."
+    adventurers: "Many elves embark on adventures out of a desire to explore the world, leaving their secluded forest realms to reclaim forgotten elven magic or search out lost kingdoms established millennia ago by their forefathers. For those raised among humans, the ephemeral and unfettered life of an adventurer holds natural appeal. Elves generally eschew melee because of their frailty, preferring instead to pursue classes such as wizards and rangers."
+
+    modifiers:
+        dexterity: "+2"
+        intelligence: "+2"
+        constitution: "-2"
+
+    age:
+        adult: 110
+        middle: 175
+        old: 263
+        venerable: 350
+
+    size:
+        modifier:
+            d: 8
+            multiplier: 3
+        male:
+            weight: 100
+            height: 64
+        female:
+            weight: 90
+            height: 64
+
+    traits:
+        - $Medium
+        - $Normal Speed
+        - $Low-Light Vision
+        - $Elven Immunities
+        - $Elven Magic
+        - $Keen Senses
+
+    languages:
+        defaults:
+            - $Elven
+            - $Common
+        extras:
+            - $Celestial
+            - $Draconic
+            - $Gnoll
+            - $Gnome
+            - $Goblin
+            - $Orc
+            - $Sylvan
+
+    weapon_familiarity:
+        - Longbows
+        - Longswords
+        - Rapiers
+        - Shortbows

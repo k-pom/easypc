@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% block panel %}
+    <div id="race">
+        <legend>Race</legend>
+
+        <div>
+            <div class="col-xs-3">
+
+                <ul class="nav nav-tabs tabs-left">
+                    {% for race, race_data in races.iteritems() %}
+                        <li class="{% if race=='dwarf' %}active{% endif %}">
+                            <a href="#{{ race }}" data-toggle="tab">{{race|capitalize}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-xs-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    {% for race, race_data in races.iteritems() %}
+                        <div class="tab-pane {% if race=='dwarf' %}active{% endif %}" id="{{race}}">
+
+                            <form action="{{url_for('update_race', name=name)}}" method=POST role="form" class="form-inline">
+                                <input type="hidden" value="{{race}}" name='race' />
+
+                                <h3>{{race|capitalize}}</h3>
+                                <input class='btn btn-primary pull-right' value="Select {{race|capitalize}}" type='submit' />
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                  <li class="active"><a href="#{{race}}_traits" role="tab" data-toggle="tab">Traits</a></li>
+                                  <li><a href="#{{race}}_desc" role="tab" data-toggle="tab">Description</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+
+                                <div class="tab-content">
+
+                                    <div class="tab-pane " id="{{race}}_desc" style='padding:10px'>
+
+                                        <strong>Physical Description: </strong>
+                                        <p>{{race_data.get('desc')}}</p>
+
+                                        <strong>Society: </strong>
+                                        <p>{{race_data.get('society')}}</p>
+
+                                        <strong>Relations: </strong>
+                                        <p>{{race_data.get('relations')}}</p>
+
+                                        <strong>Alignment and Religion: </strong>
+                                        <p>{{race_data.get('alignment')}}</p>
+
+                                        <strong>Adventurers </strong>
+                                        <p>{{race_data.get('adventurers')}}</p>
+                                    </div>
+                                    <div class="tab-pane active" id="{{race}}_traits" style='padding:10px'>
+
+                                        <p>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <strong>Modifiers</strong>
+                                            {{ race_data.get("modifier_desc")}}
+                                        </p>
+                                        {% for modifier, value in race_data.get('modifiers').iteritems() %}
+
+                                            <p>
+                                                {% if modifier == "choice" %}
+                                                    <select name="modifier" class="form-control">
+                                                        {% for attr, desc in attributes.iteritems()  %}
+                                                            <option value="{{attr}}">{{attr|capitalize}}
+                                                        {% endfor %}
+                                                    </select>
+                                                    <input value="+2" size=1 readonly class="form-control"/>
+                                                {% endif %}
+                                            </p>
+                                        {% endfor %}
+
+
+                                        {% for trait_data in race_data.get("traits") %}
+                                            {% for trait, desc in trait_data.iteritems() %}
+                                                <p>
+                                                    <input type="checkbox" name="traits" value="{{trait}}" class='traits' readonly checked />
+                                                    <strong>{{trait}}</strong>
+                                                    {{desc.get("text")}}
+                                                </p>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+{% block styles %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('.static', filename='bootstrap.vertical-tabs.min.css')}}">
+{% endblock %}
+
+
+{% block scripts %}
+    {{super()}}
+    <script type='text/javascript'>
+        $( document ).ready(function(){
+            $(".traits").click(function(){ return false;});
+        });
+    </script>
+{% endblock %}

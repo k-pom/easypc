@@ -1,0 +1,11 @@
+mongodb:
+    host: localhost
+    port: 27017
+
+oauth:
+    twitter:
+        key: ltyiM2CnAE2to4NddTxt65uTp
+        secret: 5MAQN4MxuWPu2h0wxD8AmzkZR356ACGlehJ2K68jsCoQ1UngcD
+
+app:
+    secret_key: "A&R<@+;jRHw49-+9F{&Cs/BK{c^_v'H57bLLE$aN9v'MrU]G<ke;}"

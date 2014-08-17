@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block panel %}
+
+<div class="jumbotron">
+    <h1>Give your character a name</h1>
+
+    <form action="{{url_for('create')}}" method="POST">
+
+        <div class="form-group">
+            <p>
+                <input type="text" class="form-control" id="name" name='name' placeholder="Thorin Oakenshield">
+                <span class="help-block">
+                    Don't stress too much about this; you can always change it later.
+                </span>
+
+            </p>
+        </div>
+        <input type="submit" value="Create" class='btn btn-primary btn-lg' />
+    </form>
+
+    <p></p>
+    <p>
+        This will walk you through creating a level-zero character, including starting attributes,
+        race, physical descriptions, and other basic information. Once you have created your level-zero
+        character, you will have a chance to level him up, selecting classes, skill ranks, and feats.
+    </p>
+</div>
+{% endblock %}

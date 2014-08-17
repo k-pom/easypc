@@ -1,0 +1,138 @@
+data:
+    Small:
+        text: Gnomes are Small creatures and gain a +1 size bonus to their AC, a +1 size bonus on attack rolls, a –1 penalty to their Combat Maneuver Bonus and Combat Maneuver Defense, and a +4 size bonus on Stealth checks.
+        affects:
+            - attack
+            - CMB
+            - CMD
+            - "trait:stealth"
+    Medium:
+        text: Medium creatures and have no bonuses or penalties due to their size.
+
+
+    # SPEED TRAITS
+    Normal Speed:
+        text: Base speed of 30 feet.
+        affects: speed
+
+    Slow Speed:
+        text: Base speed of 20 feet.
+        affects: speed
+
+    Slow and Steady:
+        text: "Base speed of 20 feet. Speed is never modified by armor or encumbrance."
+        affects: speed
+
+    # VISION AND PERCEPTION
+    Darkvision:
+        text: See in the dark up to 60 feet.
+        affects:
+
+    Low-Light Vision:
+        text: Can see twice as far as humans in conditions of dim light. See Additional Rules.
+
+    # TRAITS AND MODIFIERS
+    Defensive Training:
+        text: "+4 dodge bonus to AC against monsters of the giant subtype."
+        affects: AC
+    Greed:
+        text: "+2 racial bonus on Appraise skill checks made to determine the price of nonmagical goods that contain precious metals or gemstones."
+        affects: "trait:appraise"
+    Hardy:
+        text: "+2 racial bonus on saving throws against poison, spells, and spell-like abilities."
+        affects: saves
+
+    Stability:
+        text: "+4 racial bonus to their Combat Maneuver Defense when resisting a bull rush or trip attempt while standing on the ground."
+        affects: CMD
+
+    Stonecunning:
+        text: "+2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors."
+        affects: "trait:perception"
+
+    Hatred:
+        text: "+1 bonus on attack rolls against specified type due to special training against these hated foes."
+        affects: attack
+
+    Elven Immunities:
+        text: "Immune to magic sleep effects and get a +2 racial saving throw bonus against enchantment spells and effects."
+        affects: saves
+
+    Elven Magic:
+        text: "+2 racial bonus on caster level checks made to overcome spell resistance. In addition, elves receive a +2 racial bonus on Spellcraft skill checks made to identify the properties of magic items."
+        affects: "trait:spellcraft"
+
+    Keen Senses:
+        text: "+2 racial bonus on Perception skill checks."
+        affects: "trait:perception"
+
+    Gnome Magic:
+        text: "+1 to the DC of any saving throws against illusion spells that they cast. Gnomes with a Charisma of 11 or higher also gain the following spell-like abilities: 1/day—dancing lights, ghost sound, prestidigitation, and speak with animals. The caster level for these effects is equal to the gnome's level. The DC for these spells is equal to 10 + the spell's level + the gnome's Charisma modifier."
+        affects: saves
+        provides:
+            -
+                requirements:
+                    attribute: "ability:charisma"
+                    condition: ">"
+                    value: 11
+
+                provided:
+                    - "spell-like ability:dancing lights"
+                    - "spell-like ability:ghost sound"
+                    - "spell-like ability:prestidigitation"
+                    - "spell-like ability:speak with animals"
+
+    Illusion Resistance:
+        text: "+2 racial saving throw bonus against illusion spells or effects."
+        affects: saves
+
+    Obsessive:
+        text: "+2 racial bonus on a Craft or Profession skill of their choice."
+        affects:
+            - "trait:craft"
+            - "trait:profession"
+
+    Elf Blood:
+        text: Count as both elves and humans for any effect related to race.
+
+    Adaptability:
+        text: Skill Focus as a bonus feat at 1st level.
+        provides: "feat:skill focus"
+
+    Multitalented:
+        text: Choose two favored classes at first level and gain +1 hit point or +1 skill point whenever they take a level in either one of those classes. See Classes for more information about favored classes.
+        provides: "favored class"
+
+    Fearless:
+        text: "+2 racial bonus on all saving throws against fear. This bonus stacks with the bonus granted by halfling luck."
+        affects: saves
+
+    Halfling Luck:
+        text: "+1 racial bonus on all saving throws."
+        affects: saves
+
+    Sure-Footed:
+        text: "+2 racial bonus on Acrobatics and Climb skill checks."
+        affects:
+            - "trait:climb"
+            - "trail:acrobatics"
+
+    Intimidating:
+        text: "+2 racial bonus on Intimidate skill checks due to their fearsome nature."
+        affects: "trait:intimidate"
+
+    Orc Blood:
+        text: Half-orcs count as both humans and orcs for any effect related to race.
+
+    Orc Ferocity:
+        text: "Once per day, when a half-orc is brought below 0 hit points but not killed, he can fight on for one more round as if disabled. At the end of his next turn, unless brought to above 0 hit points, he immediately falls unconscious and begins dying."
+
+    Bonus Feat:
+        text: Select one extra feat at 1st level.
+        provides: "feat"
+
+    Skilled:
+        text: "Gain an additional skill rank at first level and one additional rank whenever they gain a level."
+        provides:
+            -
+                provided: "skill rank per level"

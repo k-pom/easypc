@@ -1,0 +1,16 @@
+
+
+Brace: If you use a readied action to set a brace weapon against a charge, you deal double damage on a successful hit against a charging character (see Combat).
+
+Disarm: When you use a disarm weapon, you get a +2 bonus on Combat Maneuver Checks to disarm an enemy.
+
+Double: You can use a double weapon to fight as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon. A double weapon can be wielded as a one-handed weapon, but it cannot be used as a double weapon when wielded in this way—only one end of the weapon can be used in any given round.
+
+Monk: A monk weapon can be used by a monk to perform a flurry of blows (see Classes).
+
+Nonlethal: These weapons deal nonlethal damage (see Combat).
+
+Reach: You use a reach weapon to strike opponents 10 feet away, but you can't use it against an adjacent foe.
+
+Trip: You can use a trip weapon to make trip attacks. If you are tripped during your own trip attempt, you can drop the weapon to avoid being tripped.
+

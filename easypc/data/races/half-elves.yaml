@@ -1,0 +1,67 @@
+includes:
+    "traits": "races/traits.yaml"
+    "languages": "languages.yaml"
+
+data:
+    name: Half Elf
+
+    modifier_desc: "+2 to One Ability Score: Half-elf characters get a +2 bonus to one ability score of their choice at creation to represent their varied nature."
+    desc: "Half-elves stand taller than humans but shorter than elves. They inherit the lean build and comely features of their elven lineage, but their skin color is dictated by their human side. While half-elves retain the pointed ears of elves, theirs are more rounded and less pronounced. A half-elf's human-like eyes tend to range a spectrum of exotic colors running from amber or violet to emerald green and deep blue."
+    society: "The lack of a unified homeland and culture forces half-elves to remain versatile, able to conform to nearly any environment. While often attractive to both races for the same reasons as their parents, half-elves rarely fit in with either humans or elves, as both races see too much evidence of the other in them. This lack of acceptance weighs heavily on many half-elves, yet others are bolstered by their unique status, seeing in their lack of a formalized culture the ultimate freedom. As a result, half-elves are incredibly adaptable, capable of adjusting their mindsets and talents to whatever societies they find themselves in."
+    relations: "A half-elf understands loneliness, and knows that character is often less a product of race than of life experience. As such, half-elves are often open to friendships and alliances with other races, and less likely to rely on first impressions when forming opinions of new acquaintances."
+    alignment: "Half-elves' isolation strongly influences their characters and philosophies. Cruelty does not come naturally to them, nor does blending in and bending to societal convention—as a result, most half-elves are chaotic good. Half-elves' lack of a unified culture makes them less likely to turn to religion, but those who do generally follow the common faiths of their homeland."
+    adventurers: "Half-elves tend to be itinerants, wandering the lands in search of a place they might finally call home. The desire to prove oneself to the community and establish a personal identity—or even a legacy—drives many half-elf adventurers to lives of bravery."
+
+    modifiers:
+        choice: any
+
+    age: 
+        adult: 20
+        middle: 62
+        old: 93
+        venerable: 125
+
+    size:
+        modifier:
+            d: 8
+            multiplier: 5
+        male:
+            weight: 110
+            height: 62
+        female:
+            weight: 90
+            height: 60
+
+    traits:
+        - $Medium
+        - $Normal Speed
+        - $Low-Light Vision
+        - $Adaptability
+        - $Elf Blood
+        - $Elven Immunities
+        - $Keen Senses
+        - $Multitalented
+
+    languages:
+        defaults:
+            - $Elven
+            - $Common
+        extras:
+            - $Abyssal
+            - $Aklo
+            - $Aquan
+            - $Auran
+            - $Celestial
+            - $Draconic
+            - $Dwarven
+            - $Giant
+            - $Gnome
+            - $Goblin
+            - $Gnoll
+            - $Halfling
+            - $Ignan
+            - $Infernal
+            - $Orc
+            - $Sylvan
+            - $Terran
+            - $Undercommon

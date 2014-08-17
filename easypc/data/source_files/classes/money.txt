@@ -1,0 +1,22 @@
+
+Barbarian 3d6 × 10 gp 105 gp
+
+Bard 3d6 × 10 gp 105 gp
+
+Cleric 4d6 × 10 gp 140 gp
+
+Druid 2d6 × 10 gp 70 gp
+
+Fighter 5d6 x 10 gp 175 gp
+
+Monk 1d6 × 10 gp 35 gp
+
+Paladin 5d6 × 10 gp 175 gp
+
+Ranger 5d6 × 10 gp 175 gp
+
+Rogue 4d6 × 10 gp 140 gp
+
+Sorcerer 2d6 × 10 gp 70 gp
+
+Wizard 2d6 × 10 gp 70 gp

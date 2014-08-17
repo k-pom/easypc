@@ -1,0 +1,63 @@
+includes:
+    traits: "races/traits.yaml"
+    languages: "languages.yaml"
+
+data:
+    name: Dwarf
+
+    modifier_desc: "+2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff."
+    desc: "Dwarves are a short and stocky race, and stand about a foot shorter than most humans, with wide, compact bodies that account for their burly appearance. Male and female dwarves pride themselves on the length of their hair, and men often decorate their beards with a variety of clasps and intricate braids. A clean-shaven male dwarf is a sure sign of madness, or worse—no one familiar with their race trusts a beardless dwarf."
+    society: "The great distances between their mountain citadels account for many of the cultural differences that exist within dwarven society. Despite these schisms, dwarves throughout the world are characterized by their love of stonework, their passion for stone- and metal-based craftsmanship and architecture, and a fierce hatred of giants, orcs, and goblinoids."
+    relations: "Dwarves and orcs have long dwelt in proximity, theirs a history of violence as old as both their races. Dwarves generally distrust and shun half-orcs. They find halflings, elves, and gnomes to be too frail, flighty, or “pretty” to be worthy of proper respect. It is with humans that dwarves share the strongest link, for humans' industrious nature and hearty appetites come closest to matching those of the dwarven ideal."
+    alignment: "Dwarves are driven by honor and tradition, and while they are often satirized as standoffish, they have a strong sense of friendship and justice, and those who win their trust understand that, while they work hard, they play even harder—especially when good ale is involved. Most dwarves are lawful good."
+    adventurers: "Although dwarven adventurers are rare compared to humans, they can be found in most regions of the world. Dwarves often leave the confines of their redoubts to seek glory for their clans, to find wealth with which to enrich the fortress-homes of their birth, or to reclaim fallen dwarven citadels from racial enemies. Dwarven warfare is often characterized by tunnel fighting and melee combat, and as such most dwarves tend toward classes such as fighters and barbarians."
+
+    modifiers:
+        constitution: "+2"
+        wisdom: "+2"
+        charisma: "-2"
+
+    age:
+        adult: 40
+        middle: 125
+        old: 188
+        venerable: 250
+
+    size:
+        modifier:
+            d: 4
+            multiplier: 7
+        male:
+            weight: 150
+            height: 45
+        female:
+            weight: 120
+            height: 43
+
+    traits:
+        - $Medium
+        - $Slow and Steady
+        - $Darkvision
+        - $Defensive Training
+        - $Greed
+        - $Hatred:goblinoids
+        - $Hardy
+        - $Stability
+        - $Stonecunning
+
+    languages:
+        defaults:
+            - $Dwarven
+            - $Common
+        extras:
+            - $Giant
+            - $Gnome
+            - $Goblin
+            - $Orc
+            - $Terran
+            - $Undercommon
+
+    weapon_familiarity:
+        - Battle Axes
+        - Heavy Picks
+        - Warhammers

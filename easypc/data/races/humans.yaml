@@ -1,0 +1,65 @@
+includes:
+    "traits": "races/traits.yaml"
+    "languages": "languages.yaml"
+
+data:
+    name: Human
+
+    modifier_desc: "+2 to One Ability Score: Human characters get a +2 bonus to one ability score of their choice at creation to represent their varied nature."
+    desc: "The physical characteristics of humans are as varied as the world's climes. From the dark-skinned tribesmen of the southern continents to the pale and barbaric raiders of the northern lands, humans possess a wide variety of skin colors, body types, and facial features. Generally speaking, humans' skin color assumes a darker hue the closer to the equator they live."
+    society: "Human society comprises a multitude of governments, attitudes, and lifestyles. Though the oldest human cultures trace their histories thousands of years into the past, when compared to the societies of common races like elves and dwarves, human society seems to be in a state of constant flux as empires fragment and new kingdoms subsume the old. In general, humans are known for their flexibility, ingenuity, and ambition."
+    relations: "Humans are fecund, and their drive and numbers often spur them into contact with other races during bouts of territorial expansion and colonization. In many cases, this leads to violence and war, yet humans are also swift to forgive and forge alliances with races who do not try to match or exceed them in violence. Proud, sometimes to the point of arrogance, humans might look upon dwarves as miserly drunkards, elves as flighty fops, halflings as craven thieves, gnomes as twisted maniacs, and half-elves and half-orcs as embarrassments—but the race's diversity among its own members also makes humans quite adept at accepting others for what they are."
+    alignment: "Humanity is perhaps the most heterogeneous of all the common races, with a capacity for great evil and boundless good. Some assemble into vast barbaric hordes, while others build sprawling cities that cover miles. Taken as a whole, most humans are neutral, yet they generally tend to congregate in nations and civilizations with specific alignments. Humans also have the widest range in gods and religion, lacking other races' ties to tradition and eager to turn to anyone offering them glory or protection."
+    adventurers: "Ambition alone drives countless humans, and for many, adventuring serves as a means to an end, whether it be wealth, acclaim, social status, or arcane knowledge. A few pursue adventuring careers simply for the thrill of danger. Humans hail from myriad regions and backgrounds, and as such can fill any role within an adventuring party."
+
+    modifiers:
+        choice: any
+
+    age: 
+        adult: 15
+        middle: 35
+        old: 53
+        venerable: 70
+
+    size:
+        modifier:
+            d: 10
+            multiplier: 5
+        male:
+            weight: 120
+            height: 58
+        female:
+            weight: 85
+            height: 53
+
+    traits:
+        - $Medium
+        - $Normal Speed
+        - $Bonus Feat
+        - $Skilled
+
+    languages:
+        defaults:
+            - $Common
+        extras:
+            - $Abyssal
+            - $Aklo
+            - $Aquan
+            - $Auran
+            - $Celestial
+            - $Draconic
+            - $Dwarven
+            - $Elven
+            - $Giant
+            - $Gnome
+            - $Goblin
+            - $Gnoll
+            - $Halfling
+            - $Ignan
+            - $Infernal
+            - $Orc
+            - $Sylvan
+            - $Terran
+            - $Undercommon
+
+    weapon_familiarity:

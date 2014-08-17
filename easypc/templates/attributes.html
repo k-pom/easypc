@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block panel %}
+
+    <div id="attributes">
+        <legend>Attributes</legend>
+
+        <form class="form-horizontal" role="form" action="{{url_for('update_attributes', name=name)}}" method="POST">
+            {% for attr, desc in attributes.iteritems()  %}
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                            {{ attr|capitalize}}
+                            <span class="glyphicon glyphicon-question-sign desc-hover"
+                                data-toggle="popover"
+                                title="{{attr|capitalize}}"
+                                data-content="{{desc['desc']}}"></span>
+                        </label>
+                        <div class="col-sm-10">
+                            <select name="{{ attr }}" class="form-control attr-select">
+                                {% for i in range(25) %}
+                                    <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+            {% endfor %}
+
+            <input class='btn btn-primary' id="roll-attrs" readonly value="Roll Random" />
+            <input class='btn btn-primary pull-right' type='submit' value="Use Scores" />
+        </form>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+  {{super()}}
+    <script type='text/javascript'>
+
+
+        $( document ).ready(function(){
+            $('.attr-select').val("10");
+
+            $('.desc-hover').popover({
+                trigger: "hover",
+                container: 'body'
+            })
+
+            $('#roll-attrs').click(function(){
+                $(".attr-select").each(function(){
+                    var total = 0;
+                    var numbers = [
+                        1 + Math.floor(Math.random() * 6),
+                        1 + Math.floor(Math.random() * 6),
+                        1 + Math.floor(Math.random() * 6),
+                        1 + Math.floor(Math.random() * 6)
+                    ];
+                    numbers.sort().shift();
+                    $.each(numbers,function() {total += this;});
+                    $(this).val(total);
+                })
+            })
+        })
+    </script>
+{% endblock %}
