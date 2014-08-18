@@ -71,10 +71,10 @@ data:
         affects: saves
         provides:
             -
-                requirements:
-                    attribute: "ability:charisma"
-                    condition: ">"
-                    value: 11
+                prerequisite:
+                    -
+                        attribute: "ability:charisma"
+                        value: 11
 
                 provided:
                     - "spell-like ability:dancing lights"
