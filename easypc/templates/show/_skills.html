@@ -1,0 +1,10 @@
+<div>
+    <h4>Skill Ranks</h4>
+    <table class="table table-condensed">
+        {%for skill, desc in pf_data['skills'].iteritems() %}
+            <tr>
+                <td class="col-md-4"><strong>{{skill}}</strong></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

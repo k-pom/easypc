@@ -1,0 +1,11 @@
+<div>
+    <h4>Racial Traits</h4>
+    <table class="table table-condensed">
+        {% for trait in pc['traits'] %}
+            <tr>
+                <td class="col-md-4"><strong>{{trait}}</strong></td>
+                <td class="col-md-8">{{pf_data['racial_traits'][trait]['text']}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

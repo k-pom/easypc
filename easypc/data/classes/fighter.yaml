@@ -1,0 +1,273 @@
+data:
+    class: Fighter
+    desc: |
+        Some take up arms for glory, wealth, or revenge. Others do battle to prove themselves, to
+        protect others, or because they know nothing else. Still others learn the ways of weaponcraft
+        to hone their bodies in battle and prove their mettle in the forge of war. Lords of the battlefield,
+        fighters are a disparate lot, training with many weapons or just one, perfecting the uses of armor,
+        learning the fighting techniques of exotic masters, and studying the art of combat, all to shape
+        themselves into living weapons. Far more than mere thugs, these skilled warriors reveal the true
+        deadliness of their weapons, turning hunks of metal into arms capable of taming kingdoms, slaughtering
+        monsters, and rousing the hearts of armies. Soldiers, knights, hunters, and artists of war, fighters
+        are unparalleled champions, and woe to those who dare stand against them.
+    role: |
+        Fighters excel at combat—defeating their enemies, controlling the flow of battle, and surviving such
+        sorties themselves. While their specific weapons and methods grant them a wide variety of tactics,
+        few can match fighters for sheer battle prowess.
+    alignment: any
+    hit_die: 10
+    class_skills:
+        - Climb
+        - Craft
+        - Handle Animal
+        - Intimidate
+        - Knowledge (dungeoneering)
+        - Knowledge (engineering)
+        - Profession
+        - Ride
+        - Survival
+        - Swim
+    skill_ranks_per_level: 2
+
+    proficiencies:
+        - "Heavy Armor"
+        - "Light Armor"
+        - "Medium Armor"
+        - "Simple Weapons"
+        - "Martial Weapons"
+        - "All Shields"
+
+    table:
+        1:
+            base_attack_bonus: 1
+            fortitude_save: 2
+            reflex_save: 0
+            will_save: 0
+            special:
+                - bonus_feat
+        2:
+            base_attack_bonus: 2
+            fortitude_save: 3
+            reflex_save: 0
+            will_save: 0
+            special:
+                - bonus_feat
+                - bravery +1
+        3:
+            base_attack_bonus: 3
+            fortitude_save: 3
+            reflex_save: 1
+            will_save: 1
+            special:
+                - armor training 1
+        4:
+            base_attack_bonus: 4
+            fortitude_save: 4
+            reflex_save: 1
+            will_save: 1
+            special:
+                - bonus_feat
+                - feat_swap
+        5:
+            base_attack_bonus: 5
+            fortitude_save: 4
+            reflex_save: 1
+            will_save: 1
+            special:
+                - weapon training 1
+        6:
+            base_attack_bonus: 6
+            fortitude_save: 5
+            reflex_save: 2
+            will_save: 2
+            special:
+                - bonus_feat
+                - bravery +2
+        7:
+            base_attack_bonus: 7
+            fortitude_save: 5
+            reflex_save: 2
+            will_save: 2
+            special:
+                - Armor training 2
+        8:
+            base_attack_bonus: 8
+            fortitude_save: 6
+            reflex_save: 2
+            will_save: 2
+            special:
+                - bonus_feat
+                - feat_swap
+        9:
+            base_attack_bonus: 9
+            fortitude_save: 6
+            reflex_save: 3
+            will_save: 3
+            special:
+                - weapon training 2
+        10:
+            base_attack_bonus: 10
+            fortitude_save: 7
+            reflex_save: 3
+            will_save: 3
+            special:
+                - bonus_feat
+                - bravery +3
+        11:
+            base_attack_bonus: 11
+            fortitude_save: 7
+            reflex_save: 3
+            will_save: 3
+            special:
+                - armor training 3
+        12:
+            base_attack_bonus: 12
+            fortitude_save: 8
+            reflex_save: 4
+            will_save: 4
+            special:
+                - bonus_feat
+                - feat_swap
+        13:
+            base_attack_bonus: 13
+            fortitude_save: 8
+            reflex_save: 4
+            will_save: 4
+            special:
+                - weapon training 3
+        14:
+            base_attack_bonus: 14
+            fortitude_save: 9
+            reflex_save: 4
+            will_save: 4
+            special:
+                - bonus_feat
+                - bravery +4
+        15:
+            base_attack_bonus: 15
+            fortitude_save: 9
+            reflex_save: 5
+            will_save: 6
+            special:
+                - armor training 4
+        16:
+            base_attack_bonus: 16
+            fortitude_save: 10
+            reflex_save: 5
+            will_save: 5
+            special:
+                - bonus_feat
+                - feat_swap
+        17:
+            base_attack_bonus: 17
+            fortitude_save: 10
+            reflex_save: 5
+            will_save: 5
+            special:
+                - weapon training 4
+        18:
+            base_attack_bonus: 18
+            fortitude_save: 11
+            reflex_save: 6
+            will_save: 6
+            special:
+                - bonus_feat
+                - bravery +5
+        19:
+            base_attack_bonus: 19
+            fortitude_save: 11
+            reflex_save: 6
+            will_save: 6
+            special:
+                - armor mastery
+        20:
+            base_attack_bonus: 20
+            fortitude_save: 12
+            reflex_save: 6
+            will_save: 6
+            special:
+                - weapon mastery
+                - feat_swap
+
+    features:
+        bonus_feat:
+            desc: |
+                At 1st level, and at every even level thereafter, a fighter gains a bonus feat in addition to those
+                gained from normal advancement (meaning that the fighter gains a feat at every level). These bonus
+                feats must be selected from those listed as combat feats, sometimes also called fighter bonus feats.
+            provides: "feat:choice"
+            choice_restriction: "combat"
+
+        feat_swap:
+            desc: |
+                Upon reaching 4th level, and every four levels thereafter (8th, 12th, and so on), a fighter can choose
+                to learn a new bonus feat in place of a bonus feat he has already learned. In effect, the fighter loses
+                the bonus feat in exchange for the new one. The old feat cannot be one that was used as a prerequisite
+                for another feat, prestige class, or other ability. A fighter can only change one feat at any given level
+                and must choose whether or not to swap the feat at the time he gains a new bonus feat for the level.
+            provides: "feat:choice"
+            choice_restriction: "combat"
+            optional: true
+            requirement:
+                lose: "feat:choice"
+
+        bravery:
+            desc: |
+                Starting at 2nd level, a fighter gains a +1 bonus on Will saves against fear. This bonus increases by +1 for
+                every four levels beyond 2nd.
+            affects: saves
+
+        armor_training:
+            desc: |
+                Starting at 3rd level, a fighter learns to be more maneuverable while wearing armor. Whenever he is wearing
+                armor, he reduces the armor check penalty by 1 (to a minimum of 0) and increases the maximum Dexterity bonus
+                allowed by his armor by 1. Every four levels thereafter (7th, 11th, and 15th), these bonuses increase by +1
+                each time, to a maximum –4 reduction of the armor check penalty and a +4 increase of the maximum Dexterity
+                bonus allowed.
+                In addition, a fighter can also move at his normal speed while wearing medium armor. At 7th level, a fighter
+                can move at his normal speed while wearing heavy armor.
+            affects:
+                - armor
+                - speed
+
+        weapon_training:
+            desc: |
+                Starting at 5th level, a fighter can select one group of weapons, as noted below. Whenever he attacks with a
+                weapon from this group, he gains a +1 bonus on attack and damage rolls.
+                Every four levels thereafter (9th, 13th, and 17th), a fighter becomes further trained in another group of
+                weapons. He gains a +1 bonus on attack and damage rolls when using a weapon from this group. In addition,
+                the bonuses granted by previous weapon groups increase by +1 each. For example, when a fighter reaches 9th
+                level, he receives a +1 bonus on attack and damage rolls with one weapon group and a +2 bonus on attack and
+                damage rolls with the weapon group selected at 5th level. Bonuses granted from overlapping groups do not stack.
+                Take the highest bonus granted for a weapon if it resides in two or more groups.
+                A fighter also adds this bonus to any combat maneuver checks made with weapons from this group. This bonus
+                also applies to the fighter's Combat Maneuver Defense when defending against disarm and sunder attempts made
+                against weapons from this group.
+                Weapon groups are defined as follows (GMs may add other weapons to these groups, or add entirely new groups):
+
+            choices:
+                Axes: battleaxe, dwarven waraxe, greataxe, handaxe, heavy pick, light pick, orc double axe, and throwing axe.
+                Blades, Heavy: bastard sword, elven curve blade, falchion, greatsword, longsword, scimitar, scythe, and two-bladed sword.
+                Blades, Light: dagger, kama, kukri, rapier, sickle, starknife, and short sword.
+                Bows: composite longbow, composite shortbow, longbow, and shortbow.
+                Close: gauntlet, heavy shield, light shield, punching dagger, sap, spiked armor, spiked gauntlet, spiked shield, and unarmed strike.
+                Crossbows: hand crossbow, heavy crossbow, light crossbow, heavy repeating crossbow, and light repeating crossbow.
+                Double: dire flail, dwarven urgrosh, gnome hooked hammer, orc double axe, quarterstaff, and two-bladed sword.
+                Flails: dire flail, flail, heavy flail, morningstar, nunchaku, spiked chain, and whip.
+                Hammers: club, greatclub, heavy mace, light hammer, light mace, and warhammer.
+                Monk: kama, nunchaku, quarterstaff, sai, shuriken, siangham, and unarmed strike.
+                Natural: unarmed strike and all natural weapons, such as bite, claw, gore, tail, and wing.
+                Pole Arms: glaive, guisarme, halberd, and ranseur.
+                Spears: javelin, lance, longspear, shortspear, spear, and trident.
+                Thrown: blowgun, bolas, club, dagger, dart, halfling sling staff, javelin, light hammer, net, shortspear, shuriken, sling, spear, starknife, throwing axe, and trident.
+
+        armor_mastery:
+            desc: At 19th level, a fighter gains DR 5/— whenever he is wearing armor or using a shield.
+            affects:
+                - armor
+                - damage_reduction
+        weapon_mastery:
+            desc: |
+                At 20th level, a fighter chooses one weapon, such as the longsword, greataxe, or longbow. Any attacks made with
+                that weapon automatically confirm all critical threats and have their damage multiplier increased by 1 (×2 becomes ×3,
+                for example). In addition, he cannot be disarmed while wielding a weapon of this type.

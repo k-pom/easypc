@@ -1,5 +1,5 @@
 import yaml
-
+from collections import OrderedDict
 
 def parse_vars(data, dependency_data):
 
@@ -34,7 +34,7 @@ def power_yaml(file, base_dir="easypc/data"):
 
     parse_vars(base, dependency_data)
 
-    return base['data']
+    return OrderedDict(sorted(base['data'].items()))
 
 pf_data = {
     "attributes": power_yaml("attributes.yaml"),
@@ -51,6 +51,9 @@ pf_data = {
         "Neutral Evil": None,
         "Chatic Evil": None
     },
+
+    "skills": power_yaml("skills.yaml"),
+    "racial_traits": power_yaml("races/traits.yaml"),
 
     "races": {
         "dwarf": power_yaml("races/dwarves.yaml"),

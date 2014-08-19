@@ -8,6 +8,9 @@ class Character():
     def __init__(self, name):
         self.pc = db.pcs.find_one({"name": name, "owner": session['user']})
 
+    def __getitem__(self, item):
+        return self.pc.get(item, None)
+
     @property
     def name(self):
         return self.pc.get("name")
@@ -101,4 +104,4 @@ class Character():
         db.pcs.save(self.pc)
 
     def get_modifier(self, attr):
-        return (math.floor(int(self.pc['attributes'][attr])/2) - 5)
+        return int(math.floor(int(self.pc['attributes'][attr])/2) - 5)

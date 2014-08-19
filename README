@@ -6,8 +6,15 @@
 - Background page (including img)
 
 - Level up
-    - Class specific features
-    - Feat
-    - Ranks
-    - Spells
-- Buy Equipment
+    - Choose Class
+
+    - Add HP
+        - If level 1, max
+        - Else, roll or half
+
+    - assign class skills (behind the scenes)
+    - assign bab/saves (behind the scenes)
+    - Chose skill Ranks
+    - Assign proficencies (if first level in class)
+    - select feat
+    - special
