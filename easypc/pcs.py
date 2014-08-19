@@ -18,7 +18,8 @@ def show_pc(name):
         Character(name).delete()
         return redirect(url_for('list'))
 
-    return render_template("show.html", pc=Character(name))
+
+    return render_template("show/show.html", pc=Character(name), pf_data=pf_data)
 
 
 @app.route("/pc/new")
