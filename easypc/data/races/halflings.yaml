@@ -15,9 +15,9 @@ data:
     modifiers:
         dexterity: "+2"
         charisma: "+2"
-        stength: "-2"
+        strength: "-2"
 
-    age: 
+    age:
         adult: 20
         middle: 50
         old: 75

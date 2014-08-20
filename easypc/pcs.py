@@ -8,7 +8,7 @@ from easypc.login import login_required
 @app.route("/pcs")
 @login_required
 def list():
-    return render_template('list.html', pcs=Character.list_all())
+    return render_template('show/list.html', pcs=Character.list_all())
 
 
 @app.route("/pc/<name>", methods=["GET", "POST"])
@@ -25,7 +25,7 @@ def show_pc(name):
 @app.route("/pc/new")
 @login_required
 def new():
-    return render_template('new.html', pf_data=pf_data)
+    return render_template('create/new.html', pf_data=pf_data)
 
 
 @app.route("/pc/new", methods=['POST'])
@@ -38,7 +38,7 @@ def create():
 @app.route("/pc/<name>/attributes")
 @login_required
 def attributes(name):
-    return render_template("attributes.html", name=name,
+    return render_template("create/attributes.html", name=name,
                            attributes=pf_data['attributes'])
 
 
@@ -53,7 +53,7 @@ def update_attributes(name):
 @login_required
 def race(name):
     return render_template(
-        "choose_race.html",
+        "create/choose_race.html",
         name=name,
         races=pf_data['races'],
         attributes=pf_data['attributes']
@@ -88,7 +88,7 @@ def update_race(name):
 def physical_desc(name):
     pc = Character(name)
 
-    return render_template("physical_desc.html",
+    return render_template("create/physical_desc.html",
                            name=name,
                            race=pf_data['races'][pc.race],
                            int_modifier=pc.get_modifier("intelligence"),
@@ -103,7 +103,7 @@ def update_physical_desc(name):
 
     pc.update({
         "weight": request.form.get('weight'),
-        "height": request.form.get('height'),
+        "height": "%s\" %s'" % divmod(int(request.form.get('height')), 12),
         "gender": request.form.get('gender'),
         "age": request.form.get('age'),
         "alignment": request.form.get('alignment'),

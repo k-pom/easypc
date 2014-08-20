@@ -21,23 +21,31 @@
         <h4>Physical Description</h4>
         <table class="table table-condensed">
             <tr><td>Gender</td><td>{{pc['physical_desc']['gender']}}</td></tr>
-            <tr><td>Age</td><td>{{pc['age']}}</td></tr>
+            <tr><td>Age</td><td>{{pc['age']}} years</td></tr>
             <tr><td>Height</td><td>{{pc['physical_desc']['height']}}</td></tr>
-            <tr><td>Weight</td><td>{{pc['physical_desc']['weight']}}</td></tr>
+            <tr><td>Weight</td><td>{{pc['physical_desc']['weight']}} lbs</td></tr>
             <tr><td>Eyes</td><td>{{pc['physical_desc']['eyes']}}</td></tr>
             <tr><td>Hair</td><td>{{pc['physical_desc']['hair']}}</td></tr>
         </table>
     </div>
     <div class="col-md-4">
         <h4>Speed</h4>
-        
+
     </div>
 </div>
     <div class="col-md-4">
         <h4>Languages</h4>
         <table class="table table-condensed">
             {% for lang in pc['languages'] %}
-                <tr><td>{{lang}}</td></tr>
+                <tr>
+                    <td>
+                        {{lang}}
+                        <span class="glyphicon glyphicon-question-sign desc-hover"
+                                data-toggle="popover"
+                                title="{{lang}}"
+                                data-content="{{pf_data['languages'][lang]}}"></span>
+                    </td>
+                </tr>
             {% endfor %}
         </table>
     </div>

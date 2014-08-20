@@ -1,10 +1,71 @@
 <div>
     <h4>Skill Ranks</h4>
     <table class="table table-condensed">
-        {%for skill, desc in pf_data['skills'].iteritems() %}
+        <thead>
             <tr>
-                <td class="col-md-4"><strong>{{skill}}</strong></td>
+                <th>Skill</th>
+                <th>Mod</th>
+                <th>Ranks</th>
+                <th>Total</th>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {%for skill, desc in pf_data['skills'].iteritems() %}
+                {% if desc['trained_only'] and pc['skill_ranks'].get(skill, 0) == 0 %}
+                    <tr class='' style="color: #ddd">
+                {% else %}
+                    <tr class=''>
+                {% endif %}
+                    <td class="">
+                        {{skill}}
+                        <span class="glyphicon glyphicon-question-sign desc-hover"
+                                data-toggle="popover"
+                                title="{{skill}}"
+                                data-content="{{desc['text']}}"></span>
+
+                        {% if desc['armor_check'] %}
+
+                            <span class="desc-hover" data-toggle="popover"
+                                data-content="Incurs armor check penalty">
+                                <img width="20" src="{{url_for('.static', filename='shield.png')}}" />
+                            </span>
+                        {% endif %}
+
+                        {% if skill in pc['class_skills'] %}
+                            <span class="glyphicon glyphicon-star desc-hover"
+                                data-toggle="popover"
+                                data-content="This is a class skill"></span>
+                            </span>
+                        {% endif %}
+                    </td>
+
+
+                    <td class="">
+                        {{ pc.get_modifier(desc['attr']) }}
+                    </td>
+                    <td class="">
+                        {{ pc['skill_ranks'].get('attr', 0) }}
+                    </td>
+                    <td class="">
+                        {% set total = pc.get_modifier(desc['attr'])
+                                       + pc['skill_ranks'].get('attr', 0)
+                        %}
+                        {% if skill in pc['class_skills'] %}
+                            {% set total = total+3 %}
+                        {% endif %}
+                        {{total}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </div>
+<script>
+
+    $( document ).ready(function(){
+        $('.desc-hover').popover({
+            trigger: "hover",
+            container: 'body'
+        });
+    });
+</script>

@@ -52,7 +52,9 @@ class Character():
                 "hair": None
             },
             "traits": [],
-            "languages": ["Common"]
+            "languages": ["Common"],
+            "skill_ranks": {},
+            "class_skills": {}
         })
         return cls(name)
 

@@ -53,6 +53,7 @@ pf_data = {
     },
 
     "skills": power_yaml("skills.yaml"),
+    "languages": power_yaml("languages.yaml"),
     "racial_traits": power_yaml("races/traits.yaml"),
 
     "races": {

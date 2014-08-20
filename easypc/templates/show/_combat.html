@@ -1,0 +1,38 @@
+
+<div class="row">
+    <div class="col-md-2">
+        <strong>Initiative</strong>
+    </div>
+    <div class="col-md-1">
+
+        <input size=1 value="{{pc.get_modifier('dexterity')}}"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <strong>AC</strong>
+    </div>
+    <div class="col-md-1">
+        <input size=1 value="{{pc.get_modifier('dexterity')+10}}"/>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-2">
+        <strong>Base Attack Bonus</strong>
+    </div>
+    <div class="col-md-1">
+        <input size=1 value="{{pc['base_attack_bonus']}}"/>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-2">
+        <strong>Combat Manuever Bonus</strong>
+    </div>
+    <div class="col-md-1">
+        <input size=1 value="{{ pc.get_modifier('strength')}}"/>
+    </div>
+</div>
