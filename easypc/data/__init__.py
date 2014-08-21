@@ -1,6 +1,7 @@
 import yaml
 from collections import OrderedDict
 
+
 def parse_vars(data, dependency_data):
 
     if isinstance(data, dict):
