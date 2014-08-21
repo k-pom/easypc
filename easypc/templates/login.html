@@ -17,7 +17,9 @@
                     Create Pathfinder RPG characters. Easily. Login with one of the providers below to get started.
                 </p>
                 <p>
-                    <img src="{{url_for('.static', filename='google.jpg')}}" width="100" height="100" style='opacity: .1'>
+                    <a href="{{url_for('login_google')}}">
+                        <img src="{{url_for('.static', filename='google.jpg')}}" width="100" height="100">
+                    </a>
 
                     <a href="{{url_for('login_twitter')}}">
                         <img src="{{url_for('.static', filename='twitter.jpg')}}" width="100" height="100">

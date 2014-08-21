@@ -2,7 +2,7 @@ from flask import redirect, url_for, session, render_template
 from easypc import app
 from functools import wraps
 
-from easypc.lib.oauth import facebook, twitter
+from easypc.lib.oauth import facebook, twitter, google
 
 
 def login_required(f):
