@@ -34,5 +34,6 @@ def oauth_authorized_facebook(resp):
 def login_facebook():
     if "facebook_token" in session:
         del session['facebook_token']
-    callback = "http://localhost:5000%s" % url_for('oauth_authorized_facebook')
+    callback = "%s%s" % (os.environ.get("OAUTH_REDIRECT_HOST"),
+                        ('oauth_authorized_facebook'))
     return facebook.authorize(callback=callback)

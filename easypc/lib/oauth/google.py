@@ -27,7 +27,8 @@ google = oauth.remote_app(
 def login_google():
     if "google_token" in session:
         del session['google_token']
-    callback = "http://localhost:5000%s" % url_for('oauth_authorized_google')
+    callback = "%s%s" % (os.environ.get("OAUTH_REDIRECT_HOST"),
+                        ('oauth_authorized_google'))
     return google.authorize(callback=callback)
 
 
